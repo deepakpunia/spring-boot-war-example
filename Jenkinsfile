@@ -17,7 +17,7 @@ pipeline {
 
     stage('Deploy on Test') {
       steps {
-        deploy(adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://192.168.0.118:8080')], contextPath: '/app', war: '**/*.war')
+        deploy(adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://10.111.153.123:8080')], contextPath: '/app', war: '**/*.war')
       }
     }
 
@@ -27,7 +27,7 @@ pipeline {
         id 'Yes we Should'
       }
       steps {
-        deploy(adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://192.168.0.119:8080')], contextPath: '/app', war: '**/*.war')
+        deploy(adapters: [tomcat9(credentialsId: 'tomcatserverdetails1', path: '', url: 'http://10.111.153.123:8080')], contextPath: '/app', war: '**/*.war')
       }
     }
 
