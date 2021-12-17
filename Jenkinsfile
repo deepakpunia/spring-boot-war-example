@@ -33,9 +33,6 @@ pipeline {
     }
 
   }
-  tools {
-    maven 'Maven'
-  }
   post {
     always {
       echo '========always========'
