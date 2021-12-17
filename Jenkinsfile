@@ -8,7 +8,6 @@ pipeline {
     stage('Test') {
       steps {
         sh 'mvn test'
-        slackSend(channel: 'youtubejenkins', message: 'Job Started')
       }
     }
 
