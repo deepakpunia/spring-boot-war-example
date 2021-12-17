@@ -1,12 +1,11 @@
 pipeline {
   agent any
-  tools {
-        maven 'Maven' 
-    }
   stages {
     stage('Test') {
       steps {
         sh 'mvn test'
+        sh '''pip install -U pytest
+'''
       }
     }
 
@@ -32,6 +31,9 @@ pipeline {
       }
     }
 
+  }
+  tools {
+    maven 'Maven'
   }
   post {
     always {
